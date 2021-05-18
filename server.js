@@ -37,7 +37,8 @@ app.post('/addmusic', async (req, res) => {
 app.get('/allmusic', async (req, res) => {
   try {
     const allMusic = await Music.find({});
-    return res.send(200).json(allMusic);
+
+    return res.status(200).json(allMusic);
   } catch (error) {
     console.log(error);
   }
