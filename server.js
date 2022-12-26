@@ -54,10 +54,10 @@ app.get("/allmusic", async (req, res) => {
 });
 
 app.post("/addrsvp", async (req, res) => {
-  const { full_name, email_address, phone } = req.body;
+  const { full_name, email_address, phone, guest_type } = req.body;
 
   try {
-    let rsvp = await new Rsvp({ full_name, email_address, phone });
+    let rsvp = await new Rsvp({ full_name, email_address, phone, guest_type });
     rsvp = await rsvp.save();
     return res.status(200).json(rsvp);
   } catch (error) {

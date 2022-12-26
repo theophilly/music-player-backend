@@ -7,6 +7,9 @@ const rsvpSchema = new mongoose.Schema({
   email_address: {
     type: String,
   },
+  guest_type: {
+    type: String,
+  },
   phone: {
     type: Number,
   },
